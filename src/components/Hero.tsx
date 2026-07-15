@@ -184,13 +184,13 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl -z-10" />
             <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-teal-500/5 blur-3xl -z-10" />
 
-            <div className="relative w-full max-w-[620px] pb-10 sm:pb-0">
+            <div className="relative w-full max-w-[620px] pb-12 sm:pb-0">
               {/* Dashboard Wrapper */}
               <motion.div
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="w-full rounded-3xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-2xl overflow-hidden p-5 flex flex-col gap-4 relative hover:shadow-blue-500/5 transition-shadow duration-300 hidden sm:flex"
+                className="w-full rounded-3xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-2xl overflow-hidden p-3.5 sm:p-5 flex flex-col gap-3 sm:gap-4 relative hover:shadow-blue-500/5 transition-shadow duration-300"
                 style={{
                   animation: 'float 6s ease-in-out infinite'
                 }}
@@ -421,7 +421,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                 </div>
 
                 {/* Bank Accounts & Recent Transactions split */}
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div className="hidden sm:grid grid-cols-1 md:grid-cols-5 gap-4">
                   {/* Recent Transactions List */}
                   <div className="md:col-span-3 p-4 rounded-2xl bg-[var(--bg-page)] border border-[var(--border-color)]/60 flex flex-col justify-between">
                     <div className="flex items-center justify-between mb-3 border-b border-[var(--border-color)] pb-1.5">
@@ -487,7 +487,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                 initial={{ opacity: 0, x: -30, y: 50, scale: 0.9 }}
                 animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative sm:absolute mx-auto sm:mx-0 -bottom-4 sm:-bottom-8 left-0 sm:-left-12 z-20 w-[185px] h-[375px] rounded-[38px] bg-[var(--bg-card)] border-[7px] border-slate-800 dark:border-slate-950 shadow-2xl flex flex-col overflow-hidden select-none"
+                className="absolute -bottom-6 sm:-bottom-8 left-2 sm:-left-12 z-20 w-[135px] sm:w-[185px] h-[275px] sm:h-[375px] rounded-[28px] sm:rounded-[38px] bg-[var(--bg-card)] border-[5px] sm:border-[7px] border-slate-800 dark:border-slate-950 shadow-2xl flex flex-col overflow-hidden select-none"
                 style={{
                   animation: 'floatMobile 5.5s ease-in-out infinite'
                 }}
