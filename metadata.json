@@ -1,0 +1,6 @@
+{
+  "name": "CloudBooks",
+  "description": "Sri Lanka's Premier Cloud Accounting & Business Management Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

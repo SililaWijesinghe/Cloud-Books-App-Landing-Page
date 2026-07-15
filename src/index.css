@@ -1,0 +1,92 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  /* Design Swatches */
+  --color-primary: #2684FF;
+  --color-secondary-blue-mid: #5596EA;
+  --color-secondary-blue-light: #76AFF9;
+  --color-secondary-blue-tint: rgba(38, 132, 255, 0.08);
+  --color-secondary-blue-tint-opaque: #E9F3FF;
+  --color-white: #FFFFFF;
+  --color-border-light: #E1E4E8;
+  --color-gray-muted: #8B8F9A;
+  --color-text-dark: #292C31;
+  --color-slate: #3B4551;
+  --color-navy-bg: #0A1A31;
+  --color-navy-surface: #0D2340;
+  --color-success-green: #22AB59;
+  --color-warning-orange: #FC801E;
+
+  /* Functional variables — Light Mode */
+  --bg-page: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+  --border-color: #E2E8F0;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(38, 132, 255, 0.12) 0%, transparent 65%);
+}
+
+[data-theme="dark"] {
+  /* Functional variables — Dark Mode */
+  --bg-page: #0A1A31;
+  --bg-card: #0D2340;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --border-color: #1E293B;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(38, 132, 255, 0.22) 0%, transparent 60%);
+}
+
+/* Base resets & theme transitions */
+* {
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Continuous scrolling marquee keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
