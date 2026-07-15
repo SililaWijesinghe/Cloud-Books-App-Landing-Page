@@ -22,11 +22,8 @@ import { PartnerProgramme } from './components/PartnerProgramme';
 
 export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const saved = sessionStorage.getItem('theme');
+    const saved = localStorage.getItem('theme');
     if (saved === 'light' || saved === 'dark') return saved;
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
     return 'light';
   });
 
@@ -49,7 +46,7 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    sessionStorage.setItem('theme', theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
