@@ -23,13 +23,13 @@ export const Industries: React.FC = () => {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
+          <span className="type-small-content-semibold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
             Industry Solutions
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mt-4 mb-4">
+          <h2 className="type-section-heading text-[var(--text-primary)] mt-4 mb-4">
             One Powerful Platform. Unlimited Business Possibilities.
           </h2>
-          <p className="text-base text-[var(--text-secondary)] leading-relaxed">
+          <p className="type-body-content text-[var(--text-secondary)]">
             CloudBooks is designed to support businesses across different industries. Choose your sector to see how we streamline your specific workflow.
           </p>
         </div>
@@ -45,7 +45,7 @@ export const Industries: React.FC = () => {
                 <button
                   key={ind.title}
                   onClick={() => setActiveTab(index)}
-                  className={`w-full p-4.5 rounded-2xl border text-left flex items-center justify-between transition-all cursor-pointer ${
+                  className={`w-full p-4.5 min-h-[44px] rounded-2xl border text-left flex items-center justify-between transition-all cursor-pointer ${
                     isActive
                       ? 'bg-[var(--bg-card)] border-[var(--color-primary)] shadow-md text-[var(--color-primary)] font-bold'
                       : 'bg-transparent border-[var(--border-color)]/60 hover:bg-[var(--bg-card)]/50 hover:border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
@@ -57,7 +57,7 @@ export const Industries: React.FC = () => {
                     }`}>
                       <LucideIcon name={ind.icon} size={18} />
                     </div>
-                    <span className="text-sm md:text-base font-semibold">{ind.title}</span>
+                    <span className="type-menu-button-semibold">{ind.title}</span>
                   </div>
                   <LucideIcon
                     name="ChevronRight"
@@ -86,22 +86,22 @@ export const Industries: React.FC = () => {
                     <LucideIcon name={currentIndustry.icon} size={28} />
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-[var(--text-primary)] mb-2">
+                  <h3 className="type-subheading text-[var(--text-primary)] mb-2">
                     {currentIndustry.title}
                   </h3>
                   
-                  <p className="text-base text-[var(--color-primary)] font-semibold mb-6">
+                  <p className="type-body-content font-semibold text-[var(--color-primary)] mb-6">
                     {currentIndustry.tagline}
                   </p>
 
                   <div className="border-t border-[var(--border-color)]/60 pt-6 mt-6">
-                    <p className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-4">
+                    <p className="type-small-content-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-4">
                       {currentIndustry.prefix}
                     </p>
                     
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {currentIndustry.points.map((point, pIndex) => (
-                        <li key={pIndex} className="flex items-start gap-3 text-sm text-[var(--text-primary)] font-medium">
+                        <li key={pIndex} className="flex items-start gap-3 type-body-content text-[var(--text-primary)]">
                           {currentIndustry.bulletType === 'check' ? (
                             <span className="p-0.5 rounded bg-[var(--color-success-green)]/10 text-[var(--color-success-green)] mt-0.5 shrink-0">
                               <LucideIcon name="Check" size={12} strokeWidth={3} />
@@ -117,12 +117,12 @@ export const Industries: React.FC = () => {
                 </div>
 
                 <div className="mt-10 pt-6 border-t border-[var(--border-color)]/60 flex flex-wrap items-center justify-between gap-4">
-                  <div className="text-xs text-[var(--text-secondary)]">
+                  <div className="type-small-content text-[var(--text-secondary)]">
                     Interested in starting with <span className="font-bold text-[var(--text-primary)]">{currentIndustry.title}</span> templates?
                   </div>
                   <a
                     href="#pricing"
-                    className="px-5 py-2.5 rounded-xl text-xs font-bold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 transition-all flex items-center gap-1.5"
+                    className="px-5 min-h-[44px] rounded-xl type-menu-button-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 transition-all flex items-center justify-center gap-1.5"
                   >
                     Select Plan
                     <LucideIcon name="ArrowRight" size={12} />

@@ -30,13 +30,13 @@ export const FAQ: React.FC = () => {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
-          <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
+          <span className="type-small-content-semibold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
             Any Questions?
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mt-4 mb-4">
+          <h2 className="type-section-heading text-[var(--text-primary)] mt-4 mb-4">
             Frequently asked questions
           </h2>
-          <p className="text-base text-[var(--text-secondary)] leading-relaxed">
+          <p className="type-body-content text-[var(--text-secondary)]">
             Can't find the answer you are looking for? Contact our local support team at +94 77 132 5070 for immediate onboarding assistance.
           </p>
         </div>
@@ -56,7 +56,7 @@ export const FAQ: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => toggleCol1(index)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm md:text-base text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left type-card-heading text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none min-h-[44px] cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     <motion.div
@@ -76,7 +76,7 @@ export const FAQ: React.FC = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                       >
-                        <div className="px-6 pb-5 pt-1 text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed text-left border-t border-[var(--border-color)]/30">
+                        <div className="px-6 pb-5 pt-1 type-body-content text-[var(--text-secondary)] text-left border-t border-[var(--border-color)]/30">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -99,7 +99,7 @@ export const FAQ: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => toggleCol2(index)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm md:text-base text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left type-card-heading text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none min-h-[44px] cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     <motion.div
@@ -119,7 +119,7 @@ export const FAQ: React.FC = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                       >
-                        <div className="px-6 pb-5 pt-1 text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed text-left border-t border-[var(--border-color)]/30">
+                        <div className="px-6 pb-5 pt-1 type-body-content text-[var(--text-secondary)] text-left border-t border-[var(--border-color)]/30">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -136,7 +136,7 @@ export const FAQ: React.FC = () => {
         <div className="text-center mt-12">
           <a
             href="#compare"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] hover:underline"
+            className="inline-flex items-center justify-center gap-1.5 type-menu-button-semibold text-[var(--color-primary)] hover:underline min-h-[44px]"
           >
             View all FAQs in our Help Center &rarr;
           </a>

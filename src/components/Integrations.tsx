@@ -28,13 +28,13 @@ export const Integrations: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
+          <span className="type-small-content-semibold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
             Ecosystem Connectivity
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mt-4 mb-4">
+          <h2 className="type-section-heading text-[var(--text-primary)] mt-4 mb-4">
             Connect with the tools you love
           </h2>
-          <p className="text-base text-[var(--text-secondary)] leading-relaxed">
+          <p className="type-body-content text-[var(--text-secondary)]">
             CloudBooks bridges your billing pipeline directly with webshops, local payment processors, corporate bank feeds, and file vaults seamlessly.
           </p>
         </div>
@@ -67,7 +67,7 @@ export const Integrations: React.FC = () => {
                   )}
                 </div>
 
-                <span className="text-sm font-bold text-[var(--text-primary)] tracking-tight">
+                <span className="type-card-heading text-[var(--text-primary)]">
                   {partner.name}
                 </span>
               </motion.div>
@@ -79,7 +79,7 @@ export const Integrations: React.FC = () => {
         <div>
           <button
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] hover:underline cursor-pointer group"
+            className="inline-flex items-center gap-1.5 type-menu-button-semibold text-[var(--color-primary)] hover:underline cursor-pointer group min-h-[44px]"
           >
             {showAll ? 'Collapse additional integrations' : 'View all integrations'}
             <LucideIcon

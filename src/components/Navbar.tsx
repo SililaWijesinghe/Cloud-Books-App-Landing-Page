@@ -57,8 +57,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
         id="navbar-header"
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[var(--bg-card)]/90 backdrop-blur-md py-3 shadow-md border-b border-[var(--border-color)]'
-            : 'bg-transparent py-5'
+            ? 'bg-[var(--bg-card)]/90 backdrop-blur-md py-2 lg:py-3 shadow-md border-b border-[var(--border-color)]'
+            : 'bg-transparent py-2.5 lg:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -84,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200 inline-flex items-center min-h-[44px] px-1"
               >
                 {link.label}
               </a>
@@ -95,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
               <button
                 onClick={() => setIsResourcesOpen(!isResourcesOpen)}
                 onBlur={() => setTimeout(() => setIsResourcesOpen(false), 200)}
-                className="flex items-center gap-1 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200"
+                className="flex items-center gap-1 type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200 min-h-[44px] px-1 cursor-pointer"
               >
                 Resources
                 <LucideIcon
@@ -117,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                     <a
                       href="#faq"
                       onClick={(e) => handleLinkClick(e, '#faq')}
-                      className="flex items-center gap-3 p-2.5 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all"
+                      className="flex items-center gap-3 p-2.5 rounded-xl type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all min-h-[44px]"
                     >
                       <LucideIcon name="HelpCircle" size={18} />
                       Help Center & FAQ
@@ -125,7 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                     <a
                       href="#about"
                       onClick={(e) => handleLinkClick(e, '#about')}
-                      className="flex items-center gap-3 p-2.5 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all"
+                      className="flex items-center gap-3 p-2.5 rounded-xl type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all min-h-[44px]"
                     >
                       <LucideIcon name="Briefcase" size={18} />
                       Partners Program
@@ -133,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                     <a
                       href="#values"
                       onClick={(e) => handleLinkClick(e, '#values')}
-                      className="flex items-center gap-3 p-2.5 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all"
+                      className="flex items-center gap-3 p-2.5 rounded-xl type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all min-h-[44px]"
                     >
                       <LucideIcon name="Shield" size={18} />
                       Our Vision & Core Values
@@ -150,7 +150,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
             <div className="flex items-center gap-2 p-1.5 rounded-full bg-[var(--border-color)] border border-[var(--border-color)]/30">
               <button
                 onClick={() => theme !== 'light' && toggleTheme()}
-                className={`flex items-center justify-center p-1.5 rounded-full transition-all duration-300 ${
+                className={`flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300 cursor-pointer ${
                   theme === 'light'
                     ? 'bg-[var(--color-white)] text-[var(--color-primary)] shadow-sm'
                     : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
@@ -161,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
               </button>
               <button
                 onClick={() => theme !== 'dark' && toggleTheme()}
-                className={`flex items-center justify-center p-1.5 rounded-full transition-all duration-300 ${
+                className={`flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'bg-[var(--bg-page)] text-[var(--color-primary)] shadow-sm'
                     : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
@@ -174,7 +174,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
 
             <a
               href="#signin"
-              className="text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+              className="type-menu-button-semibold text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors inline-flex items-center justify-center min-h-[44px] px-2"
             >
               Sign in
             </a>
@@ -183,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={onRequestDemo}
-              className="px-5 py-2.5 rounded-xl text-sm font-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 shadow-md shadow-blue-500/10 transition-all cursor-pointer"
+              className="px-5 min-h-[44px] rounded-xl type-menu-button-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 shadow-md shadow-blue-500/10 transition-all cursor-pointer inline-flex items-center justify-center"
             >
               Request Free Demo
             </motion.button>
@@ -194,14 +194,14 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
             {/* Theme toggle also on mobile */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-primary)]"
+              className="w-11 h-11 flex items-center justify-center rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-primary)] cursor-pointer"
             >
               <LucideIcon name={theme === 'light' ? 'Moon' : 'Sun'} size={18} />
             </button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-xl bg-[var(--color-primary)] text-white shadow-md shadow-blue-500/15"
+              className="w-11 h-11 flex items-center justify-center rounded-xl bg-[var(--color-primary)] text-white shadow-md shadow-blue-500/15 cursor-pointer"
               aria-label="Toggle Menu"
             >
               <LucideIcon name={isMobileMenuOpen ? 'X' : 'Menu'} size={20} />
@@ -217,7 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden w-full bg-[var(--bg-card)] border-b border-[var(--border-color)] fixed top-[65px] left-0 z-40 shadow-xl overflow-hidden"
+            className="lg:hidden w-full bg-[var(--bg-card)] border-b border-[var(--border-color)] fixed top-[60px] left-0 z-40 shadow-xl overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
               {navLinks.map((link) => (
@@ -225,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="text-base font-semibold text-[var(--text-primary)] hover:text-[var(--color-primary)] py-2 border-b border-[var(--border-color)]/50"
+                  className="type-menu-button-semibold text-[var(--text-primary)] hover:text-[var(--color-primary)] border-b border-[var(--border-color)]/50 min-h-[44px] flex items-center"
                 >
                   {link.label}
                 </a>
@@ -233,11 +233,11 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
               
               {/* Resources list inside mobile menu */}
               <div className="flex flex-col gap-2.5 pt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-gray-muted)]">Resources</span>
+                <span className="type-small-content-semibold uppercase tracking-wider text-[var(--color-gray-muted)]">Resources</span>
                 <a
                   href="#faq"
                   onClick={(e) => handleLinkClick(e, '#faq')}
-                  className="flex items-center gap-3 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] py-1"
+                  className="flex items-center gap-3 type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] min-h-[44px]"
                 >
                   <LucideIcon name="HelpCircle" size={16} />
                   Help Center & FAQs
@@ -245,7 +245,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                 <a
                   href="#about"
                   onClick={(e) => handleLinkClick(e, '#about')}
-                  className="flex items-center gap-3 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] py-1"
+                  className="flex items-center gap-3 type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] min-h-[44px]"
                 >
                   <LucideIcon name="Briefcase" size={16} />
                   Partners Program
@@ -253,7 +253,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                 <a
                   href="#values"
                   onClick={(e) => handleLinkClick(e, '#values')}
-                  className="flex items-center gap-3 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] py-1"
+                  className="flex items-center gap-3 type-menu-button text-[var(--text-secondary)] hover:text-[var(--color-primary)] min-h-[44px]"
                 >
                   <LucideIcon name="Shield" size={16} />
                   Our Vision & Core Values
@@ -263,7 +263,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4 border-t border-[var(--border-color)] mt-2">
                 <a
                   href="#signin"
-                  className="py-3 text-center text-sm font-semibold text-[var(--text-primary)] border border-[var(--border-color)] rounded-xl bg-[var(--bg-page)]"
+                  className="min-h-[44px] flex items-center justify-center text-center type-menu-button-semibold text-[var(--text-primary)] border border-[var(--border-color)] rounded-xl bg-[var(--bg-page)] w-full"
                 >
                   Sign in
                 </a>
@@ -272,7 +272,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
                     setIsMobileMenuOpen(false);
                     onRequestDemo();
                   }}
-                  className="py-3 text-center text-sm font-semibold bg-[var(--color-primary)] text-white rounded-xl shadow-md cursor-pointer"
+                  className="min-h-[44px] flex items-center justify-center text-center type-menu-button-semibold bg-[var(--color-primary)] text-white rounded-xl shadow-md cursor-pointer w-full"
                 >
                   Request Free Demo
                 </button>

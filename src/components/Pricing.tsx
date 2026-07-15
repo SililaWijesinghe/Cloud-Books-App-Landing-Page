@@ -35,19 +35,19 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
+          <span className="type-small-content-semibold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
             Simple & Transparent
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mt-4 mb-4">
+          <h2 className="type-section-heading text-[var(--text-primary)] mt-4 mb-4">
             Find a plan that's right for you
           </h2>
-          <p className="text-base text-[var(--text-secondary)] leading-relaxed">
+          <p className="type-body-content text-[var(--text-secondary)]">
             Choose a level of capabilities that matches your transactions, employees, and reporting requirements. No hidden fees or lock-ins.
           </p>
 
           {/* Pricing Toggle */}
           <div className="flex items-center justify-center gap-4 mt-10">
-            <span className={`text-sm font-semibold transition-colors duration-200 ${billingPeriod === 'monthly' ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)]'}`}>
+            <span className={`type-menu-button-semibold transition-colors duration-200 ${billingPeriod === 'monthly' ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)]'}`}>
               Monthly billing
             </span>
             
@@ -55,7 +55,7 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
             <button
               type="button"
               onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'yearly' : 'monthly')}
-              className="relative w-14 h-7 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-full p-0.5 cursor-pointer flex items-center transition-all duration-300"
+              className="relative w-14 h-7 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-full p-0.5 cursor-pointer flex items-center transition-all duration-300 min-h-[44px]"
             >
               <motion.div
                 layout
@@ -68,10 +68,10 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
             </button>
 
             <div className="flex items-center gap-2">
-              <span className={`text-sm font-semibold transition-colors duration-200 ${billingPeriod === 'yearly' ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)]'}`}>
+              <span className={`type-menu-button-semibold transition-colors duration-200 ${billingPeriod === 'yearly' ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)]'}`}>
                 Yearly billing
               </span>
-              <span className="px-2.5 py-0.5 text-[10px] font-extrabold text-white bg-[var(--color-success-green)] rounded-full uppercase tracking-wide">
+              <span className="px-2.5 py-0.5 type-small-content-semibold text-white bg-[var(--color-success-green)] rounded-full uppercase tracking-wide">
                 Save 20%
               </span>
             </div>
@@ -99,23 +99,23 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
               >
                 {/* Popular Ribbon/Badge */}
                 {plan.isPopular && (
-                  <span className="absolute top-0 right-8 -translate-y-1/2 px-4 py-1 text-[10px] font-extrabold text-white bg-[var(--color-primary)] rounded-full uppercase tracking-widest shadow-md">
+                  <span className="absolute top-0 right-8 -translate-y-1/2 px-4 py-1 type-small-content-semibold text-white bg-[var(--color-primary)] rounded-full uppercase tracking-widest shadow-md">
                     Most Popular
                   </span>
                 )}
 
                 <div>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-1">
+                  <h3 className="type-card-heading text-[var(--text-primary)] mb-1">
                     {plan.name} Plan
                   </h3>
-                  <p className="text-xs text-[var(--text-secondary)] font-medium mb-6">
+                  <p className="type-small-content-medium text-[var(--text-secondary)] mb-6">
                     {plan.tagline}
                   </p>
 
                   {/* Price Block with crossfade */}
                   <div className="flex items-baseline gap-1.5 mb-8 border-b border-[var(--border-color)] pb-6">
-                    <span className="text-2xl font-bold text-[var(--text-primary)] font-mono">LKR</span>
-                    <div className="relative h-12 overflow-hidden flex items-baseline">
+                    <span className="type-card-heading text-[var(--text-primary)] font-mono">LKR</span>
+                    <div className="relative h-10 overflow-hidden flex items-baseline">
                       <AnimatePresence mode="wait">
                         <motion.span
                           key={currentPrice}
@@ -123,13 +123,13 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -15 }}
                           transition={{ duration: 0.25 }}
-                          className="text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] tracking-tight font-mono inline-block"
+                          className="type-main-heading text-[var(--text-primary)] font-mono inline-block"
                         >
                           {currentPrice.toLocaleString('en-US')}
                         </motion.span>
                       </AnimatePresence>
                     </div>
-                    <span className="text-xs font-semibold text-[var(--text-secondary)] font-mono">
+                    <span className="type-small-content text-[var(--text-secondary)] font-mono">
                       {subtitle}
                     </span>
                   </div>
@@ -137,7 +137,7 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
                   {/* Features list */}
                   <ul className="flex flex-col gap-4 mb-8">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-[var(--text-primary)] font-medium leading-tight">
+                      <li key={idx} className="flex items-start gap-3 type-body-content text-[var(--text-primary)] leading-tight">
                         <span className={`p-0.5 rounded-full mt-0.5 shrink-0 ${plan.isPopular ? 'bg-[var(--color-primary)]/20 text-[var(--color-primary)]' : 'bg-[var(--color-success-green)]/15 text-[var(--color-success-green)]'}`}>
                           <LucideIcon name="Check" size={12} strokeWidth={3} />
                         </span>
@@ -152,7 +152,7 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => onPlanSelect(plan.name)}
-                  className={`w-full py-3.5 rounded-xl text-sm font-semibold transition-all cursor-pointer shadow-md ${
+                  className={`w-full min-h-[44px] flex items-center justify-center rounded-xl type-menu-button-semibold transition-all cursor-pointer shadow-md ${
                     plan.isPopular
                       ? 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 shadow-blue-500/10'
                       : 'border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)]'
@@ -169,7 +169,7 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
         <div id="compare" className="text-center mt-12">
           <button
             onClick={() => setIsComparisonOpen(true)}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] hover:underline group cursor-pointer bg-transparent border-0"
+            className="inline-flex items-center gap-1.5 type-menu-button-semibold text-[var(--color-primary)] hover:underline group cursor-pointer bg-transparent border-0 min-h-[44px]"
           >
             Explore all feature comparisons &rarr;
           </button>
@@ -201,10 +201,10 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
                   <LucideIcon name="Layers" size={20} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-[var(--text-primary)]">
+                  <h3 className="type-card-heading text-[var(--text-primary)]">
                     PAGE 7 – FEATURE COMPARISON
                   </h3>
-                  <p className="text-xs text-[var(--text-secondary)]">Detailed plan capabilities side-by-side</p>
+                  <p className="type-small-content text-[var(--text-secondary)]">Detailed plan capabilities side-by-side</p>
                 </div>
               </div>
 
@@ -212,15 +212,15 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-[var(--border-color)]">
-                      <th className="py-3 text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">Feature</th>
-                      <th className="py-3 text-xs font-bold uppercase tracking-wider text-[var(--color-primary)] text-center">Business</th>
-                      <th className="py-3 text-xs font-bold uppercase tracking-wider text-[var(--color-primary)] text-center">Enterprise</th>
+                      <th className="py-3 type-small-content-semibold uppercase tracking-wider text-[var(--text-secondary)]">Feature</th>
+                      <th className="py-3 type-small-content-semibold uppercase tracking-wider text-[var(--color-primary)] text-center">Business</th>
+                      <th className="py-3 type-small-content-semibold uppercase tracking-wider text-[var(--color-primary)] text-center">Enterprise</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[var(--border-color)]/50">
                     {comparisonData.map((row) => (
                       <tr key={row.name} className="hover:bg-[var(--bg-page)]/50 transition-colors">
-                        <td className="py-3 text-sm font-semibold text-[var(--text-primary)]">{row.name}</td>
+                        <td className="py-3 type-body-content font-semibold text-[var(--text-primary)]">{row.name}</td>
                         <td className="py-3 text-center">
                           {row.business ? (
                             <span className="inline-block p-1 rounded-full bg-green-500/10 text-[var(--color-success-green)]">
@@ -248,7 +248,7 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
               <div className="mt-8 pt-5 border-t border-[var(--border-color)] flex justify-end gap-3">
                 <button
                   onClick={() => setIsComparisonOpen(false)}
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--bg-page)] cursor-pointer"
+                  className="px-5 min-h-[44px] rounded-xl type-menu-button-semibold border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--bg-page)] cursor-pointer flex items-center justify-center"
                 >
                   Close
                 </button>
@@ -257,7 +257,7 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
                     setIsComparisonOpen(false);
                     onPlanSelect('Business');
                   }}
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 cursor-pointer"
+                  className="px-5 min-h-[44px] rounded-xl type-menu-button-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 cursor-pointer flex items-center justify-center"
                 >
                   Get Business Plan
                 </button>

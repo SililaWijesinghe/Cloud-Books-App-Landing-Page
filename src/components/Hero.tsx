@@ -99,10 +99,10 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight text-[var(--text-primary)] leading-[1.2] sm:max-w-2xl"
+              className="type-main-heading text-[var(--text-primary)] sm:max-w-2xl"
             >
               Simplify Your Accounting. Empower Your Business Growth.
-              <span className="text-[var(--color-primary)] text-xl md:text-2xl mt-4 block font-bold leading-normal">
+              <span className="text-[var(--color-primary)] type-subheading mt-4 block">
                 Cloud Accounting Software Designed for Modern Sri Lankan Businesses
               </span>
             </motion.h1>
@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-[var(--text-secondary)] leading-relaxed sm:max-w-lg"
+              className="type-body-content text-[var(--text-secondary)] sm:max-w-lg"
             >
               CloudBooks helps Sri Lankan businesses automate bookkeeping, payroll, and stock management in one secure workspace. Make smarter, faster business decisions with real-time financial tracking.
             </motion.p>
@@ -124,7 +124,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
             >
               <button
                 onClick={onStartTrial}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl text-base font-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-7 min-h-[44px] rounded-xl type-menu-button-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 Start Free Trial
                 <LucideIcon name="ArrowRight" size={16} />
@@ -132,7 +132,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
               
               <button
                 onClick={onWatchDemo}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl text-base font-semibold border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-7 min-h-[44px] rounded-xl type-menu-button-semibold border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-secondary-blue-tint)] transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <LucideIcon name="Play" size={14} className="fill-[var(--color-primary)]" />
                 Watch Demo
@@ -151,8 +151,8 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                   <LucideIcon name="Shield" size={16} />
                 </div>
                 <div className="text-left">
-                  <p className="text-xs font-bold text-[var(--text-primary)]">Secure & Reliable</p>
-                  <p className="text-[10px] text-[var(--text-secondary)]">Your data is safe</p>
+                  <p className="type-small-content-semibold text-[var(--text-primary)]">Secure & Reliable</p>
+                  <p className="type-small-content text-[var(--text-secondary)]">Your data is safe</p>
                 </div>
               </div>
 
@@ -161,8 +161,8 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                   <LucideIcon name="Smartphone" size={16} />
                 </div>
                 <div className="text-left">
-                  <p className="text-xs font-bold text-[var(--text-primary)]">Access Anywhere</p>
-                  <p className="text-[10px] text-[var(--text-secondary)]">Use any device</p>
+                  <p className="type-small-content-semibold text-[var(--text-primary)]">Access Anywhere</p>
+                  <p className="type-small-content text-[var(--text-secondary)]">Use any device</p>
                 </div>
               </div>
 
@@ -171,8 +171,8 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                   <LucideIcon name="Users" size={16} />
                 </div>
                 <div className="text-left">
-                  <p className="text-xs font-bold text-[var(--text-primary)]">Local Support</p>
-                  <p className="text-[10px] text-[var(--text-secondary)]">Expert local team</p>
+                  <p className="type-small-content-semibold text-[var(--text-primary)]">Local Support</p>
+                  <p className="type-small-content text-[var(--text-secondary)]">Expert local team</p>
                 </div>
               </div>
             </motion.div>

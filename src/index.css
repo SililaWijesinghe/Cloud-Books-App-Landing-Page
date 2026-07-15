@@ -90,3 +90,111 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Precise Type Scale and Weight System Rules */
+.type-main-heading {
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 32px !important;
+}
+@media (min-width: 768px) {
+  .type-main-heading {
+    font-size: 34px !important;
+    line-height: 41px !important;
+  }
+}
+
+.type-section-heading {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 28px !important;
+}
+@media (min-width: 768px) {
+  .type-section-heading {
+    font-size: 28px !important;
+    line-height: 35px !important;
+  }
+}
+
+.type-subheading {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  line-height: 25px !important;
+}
+@media (min-width: 768px) {
+  .type-subheading {
+    font-size: 22px !important;
+    line-height: 29px !important;
+  }
+}
+
+.type-card-heading {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 22px !important;
+}
+@media (min-width: 768px) {
+  .type-card-heading {
+    font-size: 17px !important;
+    line-height: 23px !important;
+  }
+}
+
+.type-body-content {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21px !important;
+}
+@media (min-width: 768px) {
+  .type-body-content {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+}
+
+.type-menu-button {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 16px !important;
+  letter-spacing: 0.1px !important;
+}
+@media (min-width: 768px) {
+  .type-menu-button {
+    font-size: 15px !important;
+    line-height: 16px !important;
+    letter-spacing: 0.15px !important;
+  }
+}
+
+.type-menu-button-semibold {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 16px !important;
+  letter-spacing: 0.1px !important;
+}
+@media (min-width: 768px) {
+  .type-menu-button-semibold {
+    font-size: 15px !important;
+    line-height: 16px !important;
+    letter-spacing: 0.15px !important;
+  }
+}
+
+.type-small-content {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 19px !important;
+}
+
+.type-small-content-medium {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 19px !important;
+}
+
+.type-small-content-semibold {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 19px !important;
+}
+

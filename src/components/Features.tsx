@@ -38,13 +38,13 @@ export const Features: React.FC = () => {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
-          <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
+          <span className="type-small-content-semibold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
             Complete Business Hub
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mt-4 mb-5">
+          <h2 className="type-section-heading text-[var(--text-primary)] mt-4 mb-5">
             Run more than just your books
           </h2>
-          <p className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed">
+          <p className="type-body-content text-[var(--text-secondary)]">
             CloudBooks combines your financial accounts, billing pipeline, stock inventory, and employee payroll into one intelligent platform.
           </p>
         </div>
@@ -70,7 +70,7 @@ export const Features: React.FC = () => {
                 <LucideIcon name={feature.icon} size={22} strokeWidth={2.2} />
               </div>
 
-              <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2.5 flex items-center gap-1">
+              <h3 className="type-card-heading text-[var(--text-primary)] mb-2.5 flex items-center gap-1">
                 {feature.title}
                 <LucideIcon
                   name="ArrowRight"
@@ -79,11 +79,11 @@ export const Features: React.FC = () => {
                 />
               </h3>
 
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
+              <p className="type-body-content text-[var(--text-secondary)] flex-grow">
                 {feature.description}
               </p>
 
-              <span className="text-xs font-semibold text-[var(--color-primary)] hover:underline mt-4 flex items-center gap-1">
+              <span className="type-small-content-semibold text-[var(--color-primary)] hover:underline mt-4 flex items-center gap-1">
                 View capabilities &rarr;
               </span>
             </motion.div>
@@ -106,7 +106,7 @@ export const Features: React.FC = () => {
                 {/* Modal close Button */}
                 <button
                   onClick={() => setSelectedFeature(null)}
-                  className="absolute top-5 right-5 p-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-page)] transition-colors"
+                  className="absolute top-5 right-5 p-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-page)] transition-colors cursor-pointer"
                 >
                   <LucideIcon name="X" size={18} />
                 </button>
@@ -116,22 +116,22 @@ export const Features: React.FC = () => {
                     <LucideIcon name={selectedFeature.icon} size={26} strokeWidth={2.2} />
                   </div>
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)]">
+                    <h3 className="type-subheading text-[var(--text-primary)]">
                       {selectedFeature.title} Capabilities
                     </h3>
-                    <p className="text-sm text-[var(--text-secondary)]">{selectedFeature.description}</p>
+                    <p className="type-body-content text-[var(--text-secondary)]">{selectedFeature.description}</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left mt-4">
                   {/* Features checklist */}
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-gray-muted)] mb-4">
+                    <h4 className="type-small-content-semibold uppercase tracking-widest text-[var(--color-gray-muted)] mb-4">
                       Core System Features
                     </h4>
                     <ul className="flex flex-col gap-3">
                       {selectedFeature.details.map((detail, index) => (
-                        <li key={index} className="flex items-start gap-2.5 text-sm text-[var(--text-primary)] font-medium">
+                        <li key={index} className="flex items-start gap-2.5 type-body-content text-[var(--text-primary)]">
                           <span className="p-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] mt-0.5 shrink-0">
                             <LucideIcon name="Check" size={12} strokeWidth={3} />
                           </span>
@@ -143,12 +143,12 @@ export const Features: React.FC = () => {
 
                   {/* Business benefits checklist */}
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-success-green)] mb-4">
+                    <h4 className="type-small-content-semibold uppercase tracking-widest text-[var(--color-success-green)] mb-4">
                       Key Sri Lankan Benefits
                     </h4>
                     <ul className="flex flex-col gap-3">
                       {selectedFeature.benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-2.5 text-sm text-[var(--text-primary)] font-medium">
+                        <li key={index} className="flex items-start gap-2.5 type-body-content text-[var(--text-primary)]">
                           <span className="p-0.5 rounded bg-[var(--color-success-green)]/10 text-[var(--color-success-green)] mt-0.5 shrink-0">
                             <LucideIcon name="Check" size={12} strokeWidth={3} />
                           </span>
@@ -156,7 +156,7 @@ export const Features: React.FC = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-8 p-4 rounded-2xl bg-[var(--bg-page)] border border-[var(--border-color)]/60 text-xs text-[var(--text-secondary)] leading-relaxed">
+                    <div className="mt-8 p-4 rounded-2xl bg-[var(--bg-page)] border border-[var(--border-color)]/60 type-small-content text-[var(--text-secondary)]">
                       Built specifically considering local tax (VAT/SSCL) laws, EPF/ETF requirements, and Sri Lankan business practices.
                     </div>
                   </div>
@@ -165,14 +165,14 @@ export const Features: React.FC = () => {
                 <div className="mt-8 pt-5 border-t border-[var(--border-color)] flex justify-end gap-3">
                   <button
                     onClick={() => setSelectedFeature(null)}
-                    className="px-5 py-2.5 rounded-xl text-sm font-semibold border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--bg-page)] transition-all cursor-pointer"
+                    className="px-5 min-h-[44px] rounded-xl type-menu-button-semibold border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--bg-page)] transition-all cursor-pointer flex items-center justify-center"
                   >
                     Close
                   </button>
                   <a
                     href="#pricing"
                     onClick={() => setSelectedFeature(null)}
-                    className="px-5 py-2.5 rounded-xl text-sm font-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 transition-all cursor-pointer"
+                    className="px-5 min-h-[44px] rounded-xl type-menu-button-semibold bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 transition-all cursor-pointer flex items-center justify-center"
                   >
                     Get Started Free
                   </a>

@@ -53,13 +53,13 @@ export const WhyChoose: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
+          <span className="type-small-content-semibold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-secondary-blue-tint)] px-3.5 py-1.5 rounded-full">
             Why Choose CloudBooks?
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mt-4 mb-4">
+          <h2 className="type-section-heading text-[var(--text-primary)] mt-4 mb-4">
             Cloud Accounting Software Designed for Modern Sri Lankan Businesses
           </h2>
-          <p className="text-base text-[var(--text-secondary)] leading-relaxed">
+          <p className="type-body-content text-[var(--text-secondary)]">
             Running a successful business requires more than just recording transactions. You need accurate information, powerful insights, and complete control over your financial operations.
           </p>
         </div>
@@ -81,16 +81,16 @@ export const WhyChoose: React.FC = () => {
                   <LucideIcon name={item.icon} size={22} strokeWidth={2} />
                 </div>
 
-                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-3">
+                <h3 className="type-card-heading text-[var(--text-primary)] mb-3">
                   {item.title}
                 </h3>
                 
-                <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                <p className="type-body-content text-[var(--text-secondary)]">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="flex items-center gap-1 text-[var(--color-primary)] text-xs font-bold mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-1 text-[var(--color-primary)] type-small-content-semibold mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
                 <span>Learn more</span>
                 <LucideIcon name="ArrowRight" size={12} />
               </div>
@@ -101,17 +101,17 @@ export const WhyChoose: React.FC = () => {
         {/* Home page intro text directly from page 1 of PDF */}
         <div className="mt-20 p-8 md:p-10 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-color)] text-left shadow-lg relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 bg-[var(--color-primary)]/5 rounded-full blur-3xl -z-10" />
-          <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] mb-4">
+          <h3 className="type-subheading text-[var(--text-primary)] mb-4">
             Simplify Your Accounting. Empower Your Business Growth.
           </h3>
-          <div className="space-y-4 text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">
-            <p>
+          <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+            <p className="type-body-content">
               <strong>CloudBooks</strong> is a next-generation cloud accounting and business management platform designed to help Sri Lankan businesses automate accounting, streamline operations, and make smarter decisions with real-time financial information.
             </p>
-            <p>
+            <p className="type-body-content">
               Whether you are a startup building your first business, a growing SME expanding operations, a retailer managing inventory, a manufacturer controlling costs, or an established enterprise operating multiple branches, CloudBooks provides everything you need in one powerful platform.
             </p>
-            <p className="font-semibold text-[var(--text-primary)]">
+            <p className="type-body-content font-semibold text-[var(--text-primary)]">
               With CloudBooks, your financial data is available anytime, anywhere, allowing you to manage your business confidently from your office, home, or while travelling.
             </p>
           </div>

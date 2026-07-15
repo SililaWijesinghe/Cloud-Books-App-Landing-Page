@@ -37,11 +37,11 @@ export const CTA: React.FC<CTAProps> = ({ onStartTrial, onRequestDemo }) => {
             <LucideIcon name="Cloud" size={32} strokeWidth={2.5} />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl leading-tight">
+          <h2 className="type-section-heading max-w-2xl text-white">
             Ready to simplify your accounting?
           </h2>
           
-          <p className="text-base md:text-lg text-blue-100 max-w-xl font-medium leading-relaxed">
+          <p className="type-body-content text-blue-100 max-w-xl font-medium">
             Join thousands of Sri Lankan businesses and start automating your books, payroll, and stock control today.
           </p>
 
@@ -50,7 +50,7 @@ export const CTA: React.FC<CTAProps> = ({ onStartTrial, onRequestDemo }) => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={onStartTrial}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-white text-[var(--color-primary)] hover:bg-blue-50 transition-all shadow-xl shadow-blue-900/25 flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-8 min-h-[44px] rounded-xl type-menu-button-semibold bg-white text-[var(--color-primary)] hover:bg-blue-50 transition-all shadow-xl shadow-blue-900/25 flex items-center justify-center gap-2 cursor-pointer"
             >
               Start Free Trial
               <LucideIcon name="ArrowRight" size={16} />
@@ -60,14 +60,14 @@ export const CTA: React.FC<CTAProps> = ({ onStartTrial, onRequestDemo }) => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={onRequestDemo}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold border-2 border-white text-white hover:bg-white/10 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-8 min-h-[44px] rounded-xl type-menu-button-semibold border-2 border-white text-white hover:bg-white/10 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               Request Free Demo
             </motion.button>
           </div>
 
           {/* Quick legal / trust helper text */}
-          <p className="text-xs text-blue-200 mt-2 font-medium">
+          <p className="type-small-content text-blue-200 mt-2 font-medium">
             No credit card required • 14-day free trial • Instantly set up in 5 minutes
           </p>
         </motion.div>
