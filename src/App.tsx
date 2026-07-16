@@ -9,7 +9,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustedBy } from './components/TrustedBy';
 import { Features } from './components/Features';
-import { AIInsight } from './components/AIInsight';
+import { OwnerAndIdea } from './components/OwnerAndIdea';
 import { Pricing } from './components/Pricing';
 import { Integrations } from './components/Integrations';
 import { FAQ } from './components/FAQ';
@@ -27,6 +27,8 @@ export default function App() {
     return 'light';
   });
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const [showPromo, setShowPromo] = useState(true);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [demoModalType, setDemoModalType] = useState<'trial' | 'demo'>('trial');
@@ -46,8 +48,37 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+      interval = setInterval(() => {
+        setLoadingProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval);
+            setTimeout(() => setIsLoading(false), 400); // smooth exit
+            return 100;
+          }
+          const increment = Math.floor(Math.random() * 10) + 5;
+          return Math.min(prev + increment, 100);
+        });
+      }, 60);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      clearInterval(interval);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isLoading]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
@@ -94,6 +125,52 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col relative bg-[var(--bg-page)] text-[var(--text-primary)] transition-all">
       
+      {/* 0 to 100 Loading Preloader with Logo */}
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <motion.div
+            key="preloader"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center p-6 ${theme === 'dark' ? 'bg-[#000B1E]' : 'bg-white'}`}
+          >
+            <div className="flex flex-col items-center gap-5 text-center max-w-sm">
+              <motion.div
+                initial={{ scale: 0.85, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="flex items-center justify-center"
+              >
+                <span className={`text-4xl font-extrabold tracking-tight transition-colors ${theme === 'dark' ? 'text-white' : 'text-[#001F5B]'}`}>
+                  CloudBooks
+                </span>
+              </motion.div>
+
+              <div className="flex flex-col gap-2 w-full mt-4">
+                <div className={`flex justify-between items-center text-[10px] font-bold tracking-wider font-mono uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-[#001F5B]'}`}>
+                  <span>Initializing Secure Ledgers</span>
+                  <span>{loadingProgress}%</span>
+                </div>
+                
+                {/* Progress bar */}
+                <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden relative border border-slate-200/30">
+                  <motion.div
+                    className="h-full bg-gradient-to-r from-[#001F5B] via-[#006DFF] to-[#18BDF2] rounded-full"
+                    style={{ width: `${loadingProgress}%` }}
+                    transition={{ duration: 0.1 }}
+                  />
+                </div>
+              </div>
+
+              <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono mt-1">
+                Sri Lanka's Compliance and Accounting Core v4.1
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* 1. Promotional Top Banner */}
       <AnimatePresence>
         {showPromo && (
@@ -144,17 +221,17 @@ export default function App() {
         {/* 4. Trusted-By Logo Marquee */}
         <TrustedBy />
 
+        {/* 5. Owner & Visionary Idea Section (Origin Story) */}
+        <OwnerAndIdea />
+
         {/* Why Choose CloudBooks Section */}
         <WhyChoose />
 
-        {/* 5. Features Grid Section */}
+        {/* 6. Features Grid Section */}
         <Features />
 
         {/* Industry Solutions Section */}
         <Industries />
-
-        {/* 6. AI Insights Interactive Sandbox */}
-        <AIInsight />
 
         {/* 7. Pricing Matrix Section */}
         <Pricing

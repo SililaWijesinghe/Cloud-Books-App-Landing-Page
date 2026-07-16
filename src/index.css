@@ -13,46 +13,48 @@
 
 :root {
   /* Design Swatches */
-  --color-primary: #2684FF;
-  --color-secondary-blue-mid: #5596EA;
-  --color-secondary-blue-light: #76AFF9;
-  --color-secondary-blue-tint: rgba(38, 132, 255, 0.08);
-  --color-secondary-blue-tint-opaque: #E9F3FF;
+  --color-primary: #001F5B;               /* Deep Navy Blue (Main Color) */
+  --color-secondary: #006DFF;             /* Digital Blue (Secondary Blue) */
+  --color-accent: #18BDF2;                /* Sky Digital Blue (Light Blue Accent) */
+  --color-secondary-blue-mid: #006DFF;
+  --color-secondary-blue-light: #18BDF2;
+  --color-secondary-blue-tint: rgba(0, 109, 255, 0.08);
+  --color-secondary-blue-tint-opaque: #F0F7FF;
   --color-white: #FFFFFF;
-  --color-border-light: #E1E4E8;
-  --color-gray-muted: #8B8F9A;
-  --color-text-dark: #292C31;
-  --color-slate: #3B4551;
-  --color-navy-bg: #0A1A31;
-  --color-navy-surface: #0D2340;
+  --color-border-light: #E2E8F0;
+  --color-gray-muted: #64748B;
+  --color-text-dark: #001F5B;
+  --color-slate: #1E293B;
+  --color-navy-bg: #001F5B;
+  --color-navy-surface: #0A285C;
   --color-success-green: #22AB59;
   --color-warning-orange: #FC801E;
 
   /* Functional variables — Light Mode */
-  --bg-page: #F8FAFC;
-  --bg-card: #FFFFFF;
-  --text-primary: #1E293B;
+  --bg-page: #FFFFFF;                     /* Clean, premium white background as in the Lumex layout */
+  --bg-card: #F8FAFC;                     /* Soft contrast card background */
+  --text-primary: #001F5B;                /* Primary text uses Deep Navy Blue for maximum professionalism */
   --text-secondary: #64748B;
   --border-color: #E2E8F0;
   
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
-  --hero-glow: radial-gradient(circle at 50% -20%, rgba(38, 132, 255, 0.12) 0%, transparent 65%);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(0, 109, 255, 0.08) 0%, transparent 65%);
 }
 
 [data-theme="dark"] {
-  /* Functional variables — Dark Mode */
-  --bg-page: #0A1A31;
-  --bg-card: #0D2340;
+  /* Functional variables — Dark Mode retains premium deep navy aesthetics */
+  --bg-page: #000B1E;
+  --bg-card: #001533;
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
-  --border-color: #1E293B;
+  --border-color: #0A254F;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
-  --hero-glow: radial-gradient(circle at 50% -20%, rgba(38, 132, 255, 0.22) 0%, transparent 60%);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(0, 109, 255, 0.15) 0%, transparent 60%);
 }
 
 /* Base resets & theme transitions */

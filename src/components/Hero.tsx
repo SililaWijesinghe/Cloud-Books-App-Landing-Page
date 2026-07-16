@@ -66,10 +66,10 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
   ];
 
   const donutData = [
-    { name: 'Salaries', value: 45, color: '#2684FF' },
-    { name: 'Rent', value: 25, color: '#5596EA' },
-    { name: 'Utilities', value: 15, color: '#76AFF9' },
-    { name: 'Others', value: 15, color: '#FC801E' },
+    { name: 'Salaries', value: 45, color: '#001F5B' },
+    { name: 'Rent', value: 25, color: '#006DFF' },
+    { name: 'Utilities', value: 15, color: '#18BDF2' },
+    { name: 'Others', value: 15, color: '#64748B' },
   ];
 
   return (
@@ -347,7 +347,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                             cy="18"
                             r="15.915"
                             fill="transparent"
-                            stroke="#2684FF"
+                            stroke="#001F5B"
                             strokeWidth="3.5"
                             strokeDasharray="45 55"
                             strokeDashoffset="0"
@@ -362,7 +362,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                             cy="18"
                             r="15.915"
                             fill="transparent"
-                            stroke="#5596EA"
+                            stroke="#006DFF"
                             strokeWidth="3.5"
                             strokeDasharray="25 75"
                             strokeDashoffset="-45"
@@ -377,7 +377,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                             cy="18"
                             r="15.915"
                             fill="transparent"
-                            stroke="#76AFF9"
+                            stroke="#18BDF2"
                             strokeWidth="3.5"
                             strokeDasharray="15 85"
                             strokeDashoffset="-70"
@@ -392,7 +392,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                             cy="18"
                             r="15.915"
                             fill="transparent"
-                            stroke="#FC801E"
+                            stroke="#64748B"
                             strokeWidth="3.5"
                             strokeDasharray="15 85"
                             strokeDashoffset="-85"
@@ -421,7 +421,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartTrial, onWatchDemo }) => {
                 </div>
 
                 {/* Bank Accounts & Recent Transactions split */}
-                <div className="hidden sm:grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                   {/* Recent Transactions List */}
                   <div className="md:col-span-3 p-4 rounded-2xl bg-[var(--bg-page)] border border-[var(--border-color)]/60 flex flex-col justify-between">
                     <div className="flex items-center justify-between mb-3 border-b border-[var(--border-color)] pb-1.5">

@@ -18,15 +18,26 @@ export const Footer: React.FC<FooterProps> = ({ onStartTrial }) => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
-      const targetElement = document.querySelector(href);
-      if (targetElement) {
-        const offset = 80;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+      if (href === '#') {
         window.scrollTo({
-          top: offsetPosition,
+          top: 0,
           behavior: 'smooth'
         });
+        return;
+      }
+      try {
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          const offset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      } catch (err) {
+        console.warn('Invalid selector or element not found:', href);
       }
     }
   };
@@ -195,12 +206,9 @@ export const Footer: React.FC<FooterProps> = ({ onStartTrial }) => {
           
           {/* Logo / Brand block (2 columns) */}
           <div className="lg:col-span-2 flex flex-col items-start gap-4">
-            <a href="#" onClick={(e) => handleLinkClick(e, '#')} className="flex items-center gap-2 min-h-[44px]">
-              <div className="w-10 h-10 rounded-xl bg-[var(--color-primary)] flex items-center justify-center text-white shadow-md">
-                <LucideIcon name="Cloud" size={24} strokeWidth={2.5} />
-              </div>
-              <span className="type-card-heading text-white">
-                Cloud<span className="text-[var(--color-primary)]">Books</span>
+            <a href="#" onClick={(e) => handleLinkClick(e, '#')} className="flex items-center min-h-[44px]">
+              <span className="text-2xl font-extrabold text-white tracking-tight">
+                CloudBooks
               </span>
             </a>
             <p className="text-gray-400 type-small-content leading-relaxed text-left max-w-sm mt-1">

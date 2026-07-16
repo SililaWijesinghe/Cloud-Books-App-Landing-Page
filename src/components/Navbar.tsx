@@ -38,16 +38,28 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
     setIsMobileMenuOpen(false);
     setIsResourcesOpen(false);
     
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      const offset = 80; // height of sticky header
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      
+    if (href === '#' || href === '') {
       window.scrollTo({
-        top: offsetPosition,
+        top: 0,
         behavior: 'smooth'
       });
+      return;
+    }
+    
+    try {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        const offset = 80; // height of sticky header
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } catch (err) {
+      console.warn('Invalid selector or element not found:', href);
     }
   };
 
@@ -57,8 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
         id="navbar-header"
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[var(--bg-card)]/90 backdrop-blur-md py-2 lg:py-3 shadow-md border-b border-[var(--border-color)]'
-            : 'bg-transparent py-2.5 lg:py-5'
+            ? 'bg-[var(--bg-card)]/90 backdrop-blur-md py-1.5 lg:py-3 shadow-md border-b border-[var(--border-color)]'
+            : 'bg-transparent py-2 lg:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -66,14 +78,10 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
           <a
             href="#"
             onClick={(e) => handleLinkClick(e, '#')}
-            className="flex items-center gap-2.5 group"
+            className="flex items-center group"
           >
-            <div className="w-10 h-10 rounded-xl bg-[var(--color-primary)] flex items-center justify-center text-white shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform duration-200">
-              <LucideIcon name="Cloud" className="absolute" size={24} strokeWidth={2.5} />
-              <LucideIcon name="BookOpen" className="relative translate-y-1 text-blue-100 opacity-90" size={14} strokeWidth={2} />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-[var(--text-primary)]">
-              Cloud<span className="text-[var(--color-primary)]">Books</span>
+            <span className={`text-2xl font-extrabold tracking-tight transition-colors ${theme === 'dark' ? 'text-white' : 'text-[#001F5B]'}`}>
+              CloudBooks
             </span>
           </a>
 
@@ -217,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden w-full bg-[var(--bg-card)] border-b border-[var(--border-color)] fixed top-[60px] left-0 z-40 shadow-xl overflow-hidden"
+            className="lg:hidden w-full bg-[var(--bg-card)] border-b border-[var(--border-color)] fixed top-[56px] left-0 z-40 shadow-xl overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
               {navLinks.map((link) => (
