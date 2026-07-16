@@ -142,13 +142,13 @@ export default function App() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="flex items-center justify-center"
               >
-                <span className={`text-4xl font-extrabold tracking-tight transition-colors ${theme === 'dark' ? 'text-white' : 'text-[#001F5B]'}`}>
+                <span className={`text-4xl font-extrabold tracking-tight transition-colors ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
                   CloudBooks
                 </span>
               </motion.div>
 
               <div className="flex flex-col gap-2 w-full mt-4">
-                <div className={`flex justify-between items-center text-[10px] font-bold tracking-wider font-mono uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-[#001F5B]'}`}>
+                <div className={`flex justify-between items-center text-[10px] font-bold tracking-wider font-mono uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-black'}`}>
                   <span>Initializing Secure Ledgers</span>
                   <span>{loadingProgress}%</span>
                 </div>

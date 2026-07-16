@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onRequestDem
             onClick={(e) => handleLinkClick(e, '#')}
             className="flex items-center group"
           >
-            <span className={`text-2xl font-extrabold tracking-tight transition-colors ${theme === 'dark' ? 'text-white' : 'text-[#001F5B]'}`}>
+            <span className={`text-2xl font-extrabold tracking-tight transition-colors ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
               CloudBooks
             </span>
           </a>

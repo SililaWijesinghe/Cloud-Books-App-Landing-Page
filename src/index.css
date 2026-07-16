@@ -23,7 +23,7 @@
   --color-white: #FFFFFF;
   --color-border-light: #E2E8F0;
   --color-gray-muted: #64748B;
-  --color-text-dark: #001F5B;
+  --color-text-dark: #000000;
   --color-slate: #1E293B;
   --color-navy-bg: #001F5B;
   --color-navy-surface: #0A285C;
@@ -33,7 +33,7 @@
   /* Functional variables — Light Mode */
   --bg-page: #FFFFFF;                     /* Clean, premium white background as in the Lumex layout */
   --bg-card: #F8FAFC;                     /* Soft contrast card background */
-  --text-primary: #001F5B;                /* Primary text uses Deep Navy Blue for maximum professionalism */
+  --text-primary: #000000;                /* Primary text uses solid black */
   --text-secondary: #64748B;
   --border-color: #E2E8F0;
   
